@@ -36,7 +36,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 23px;
+  margin: 5px;
+  position: absolute;
+  right: 20px;
   padding: 3px;
   border-bottom: 1px solid black;
 }
@@ -81,10 +83,6 @@
   display: flex;
   justify-content: flex-end;
 }
-
-/* .product-info > *{
-  margin-bottom: 1em;
-} */
 
 .product-title{
   font-size: larger;
