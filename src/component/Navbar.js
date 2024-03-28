@@ -14,6 +14,10 @@ const Navbar = () => {
         navigate("/login");
     }
 
+    const goToHome = () => {
+        navigate("/");
+    }
+
     return (
         <div>
             <div>
@@ -23,7 +27,7 @@ const Navbar = () => {
                 </div>
             </div>
             <div className="nav-section">
-                <img width={100} src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg" alt=""/>
+                <img width={100} src="https://upload.wikimedia.org/wikipedia/commons/5/53/H%26M-Logo.svg" alt="" onClick={goToHome}/>
             </div>
             <div className="menu-area">
                 <ul className="menu-list">
