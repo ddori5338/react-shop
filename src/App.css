@@ -17,6 +17,7 @@
 .nav-section img{
   width: 100px;
   cursor: pointer;
+  margin-bottom: 2em;
 }
 
 .menu-list{
@@ -30,11 +31,17 @@
 
 .menu-list li{
   padding: 10px;
+  cursor: pointer;
+}
+
+.menu-list li:hover{
+  text-decoration: underline;
 }
 
 .menu-area{
   display: flex;
   justify-content: center;
+  margin-bottom: 2em;
 }
 
 .search-box{
@@ -43,12 +50,13 @@
   align-items: center;
   margin: 5px;
   position: absolute;
-  right: 20px;
+  right: 40px;
   padding: 3px;
   border-bottom: 1px solid black;
 }
 
 .search-box input{
+  max-width: 150px;
   border: none;
   font-size: 1em;
   margin-left: 5px;
@@ -116,4 +124,115 @@
 
 #purchase-btn{
   width: 100%;
+}
+
+.hide{
+  visibility: hidden
+}
+
+@media screen and (max-width: 1008px) {
+  .hide {
+    visibility: visible;
+  }
+  .menu-area {
+    display: none;
+  }
+  .search-box{
+    display: none;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .product-img{
+    justify-content: center;
+  }
+}
+
+.side-menu {
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: burlywood;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  z-index:2
+}
+.side-menu-list button {
+  margin: 5px;
+  border: none;
+  background: none;
+  width: 120px;
+}
+
+.side-menu .closebtn {
+  position: absolute;
+  top: 0;
+  right: 25px;
+  font-size: 36px;
+  margin-left: 50px;
+  border: none;
+  background: none;
+}
+
+.side-menu-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.side-menu-list button:hover {
+  background-color: beige;
+  border-radius: 3px;
+} 
+
+.nav-header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.nav-header * {
+  margin-right: 10px;
+  margin-top: 10px;
+}
+
+.burger-menu{
+  margin-left: 50px;
+}
+
+Form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+Form > *{
+  width: 60%;
+}
+
+.search-box-side{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 5px;
+  padding: 3px;
+}
+
+.search-box-side input{
+  background-color: white;
+  padding-left: 10px;
+  border-radius: 30px;
+  max-width: 150px;
+  border: none;
+  font-size: 1em;
+  margin-left: 5px;
+}
+
+.search-box-side input:focus{
+  outline: none;
 }
