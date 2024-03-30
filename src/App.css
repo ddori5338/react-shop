@@ -97,6 +97,10 @@
   justify-content: flex-end;
 }
 
+.product-img img{
+  width: 100%;
+}
+
 .product-title{
   font-size: larger;
   margin-bottom: .5em;
