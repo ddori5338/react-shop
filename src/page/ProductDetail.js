@@ -4,16 +4,17 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
+import { detailAction } from '../redux/actions/detailAction';
+import { useDispatch, useSelector } from 'react-redux';
 
 const ProductDetail = () => {
     let {id} = useParams();
-    const [product, setProduct] = useState(null);
+    const product = useSelector(state => state.detail.product);
+    // const [product, setProduct] = useState(null);
+    const dispatch = useDispatch();
 
-    const getProductDetail = async () => {
-        let url = `https://my-json-server.typicode.com/ddori5338/react-shop/products/${id}`
-        let response = await fetch(url);
-        let data = await response.json();
-        setProduct(data);
+    const getProductDetail = () => {
+        dispatch(detailAction.getDetail(id));
     }
 
     useEffect(() => {
