@@ -1,20 +1,19 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect } from 'react';
 import {useParams} from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
-import { productAction } from '../redux/actions/productAction';
 import { useDispatch, useSelector } from 'react-redux';
+import { fetchSingleProduct } from '../redux/reducers/productSlice';
 
 const ProductDetail = () => {
     let {id} = useParams();
     const product = useSelector(state => state.product.selectedItem);
-    // const [product, setProduct] = useState(null);
     const dispatch = useDispatch();
 
     const getProductDetail = () => {
-        dispatch(productAction.getDetail(id));
+        dispatch(fetchSingleProduct(id));
     }
 
     useEffect(() => {
@@ -25,7 +24,7 @@ const ProductDetail = () => {
         <Container>
             <Row>
                 <Col sm={6} className="product-img">
-                    <img src={product?.img}/>
+                    <img src={product?.img} alt=""/>
                 </Col>
                 <Col className="product-info">
                     <div className="product-title">{product?.title}</div>
