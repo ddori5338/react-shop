@@ -4,17 +4,17 @@ import { Container, Row, Col } from 'react-bootstrap';
 import Dropdown from 'react-bootstrap/Dropdown';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Button from 'react-bootstrap/Button';
-import { detailAction } from '../redux/actions/detailAction';
+import { productAction } from '../redux/actions/productAction';
 import { useDispatch, useSelector } from 'react-redux';
 
 const ProductDetail = () => {
     let {id} = useParams();
-    const product = useSelector(state => state.detail.product);
+    const product = useSelector(state => state.product.selectedItem);
     // const [product, setProduct] = useState(null);
     const dispatch = useDispatch();
 
     const getProductDetail = () => {
-        dispatch(detailAction.getDetail(id));
+        dispatch(productAction.getDetail(id));
     }
 
     useEffect(() => {
